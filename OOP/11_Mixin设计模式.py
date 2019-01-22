@@ -11,11 +11,11 @@ Mixin设计模式：就是编译的时候把一段代码复制到另一个地方
 
 '''
 class Mixin1(object):
-    # 如果Myclass2中没有定义test方法，在c2调用的时候会不会调用Mixin2中的test方法呢，下面测试一下
-    '''
+    # 如果Myclass2中没有定义test方法，在c2调用的时候会不会调用Mixin2中的test方法呢，下面测试一下，结果是会调用
+
     def test(self):
         print("mixin 1")
-    '''
+
     def which_test(self):
         self.test()
 
@@ -27,14 +27,15 @@ class MyClass1(Mixin1, Mixin2):
     pass                        # 按从左到右顺序从 mixin 中获取功能并添加到 MyClass
 
 class Myclass2(Mixin1, Mixin2):
-    # 如果Myclass2中没有定义test方法，在c2调用的时候会不会调用Mixin2中的test方法呢，下面测试一下
+    # 如果Myclass2中没有定义test方法，在c2调用的时候会不会调用Mixin2中的test方法呢，下面测试一下，会先调用Mixin1中的test方法
+    # 如果Mixin1中没有test方法，再去Mixin2中寻找test方法调用
     '''
     def test(self):             # 已有 test 方法，因而不会再添加 Mixin1, Mixin2 的 test 方法
         print("my class 2")
     '''
 
-'''
-将之前案例都注释一下，重新写个案例
+
+# 将之前案例都注释一下，重新写个案例
 c1 = MyClass1()
 c1.test()                       #  "mixin 1"
 c2 = Myclass2()
@@ -42,7 +43,7 @@ c2.test()                       #  "my class 2"
 c2.which_test()                 #  "my class 2"
 print(isinstance(c1, Mixin1))          #  True
 print(issubclass(MyClass1, Mixin2))    #  True
-'''
+
 # 这个案例可以看出来，c2和c3都是Myclass2类，他们的父类是Mixin1和Mixin2，在调用test方法时，优先调用本类中的test方法
 # 当本类和Mixin1父类中找不到test方法的时候，会去Mixin2中去找test方法。
 c3 = Myclass2()

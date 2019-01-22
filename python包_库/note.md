@@ -89,14 +89,14 @@
             from pkg01 import p01 
             p01.sayHello
     - from package_name import  *
-        - 导入当钱包__init__.py文件中所有的函数和类，要注意这种导入方法导入的内容
+        - 导入当前包__init__.py文件中所有的函数和类，要注意这种导入方法导入的内容
         - 使用方法：
                 
                 func_name()
                 class_name.func_name()
                 class_name.var
         - 案例p09_包的导入（from语句导入*）.py
-    - from package_name,module import * 
+    - from package_name.module import * 
         - 导入包中指定的模块的所有内容
         - 使用方法：            
                 

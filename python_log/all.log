@@ -1,0 +1,11 @@
+
+2019-01-01 12:28:22,385--DEBUG--debug message	
+2019-01-01 12:28:22,385--INFO--info message	
+2019-01-01 12:28:22,385--WARNING--warning message	
+2019-01-01 12:28:22,385--ERROR--error message	
+2019-01-01 12:28:22,385--CRITICAL--critical message	
+2019-01-01 12:28:55,086--DEBUG--debug message	
+2019-01-01 12:28:55,086--INFO--info message	
+2019-01-01 12:28:55,086--WARNING--warning message	
+2019-01-01 12:28:55,087--ERROR--error message	
+2019-01-01 12:28:55,087--CRITICAL--critical message	
